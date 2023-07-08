@@ -1,0 +1,24 @@
+alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+end= False
+def ceaser(t, s, d):
+    end_code=""
+    for i in text:
+        if i not in alphabet:
+            end_code+=i
+        else:
+            x= alphabet.index(i)
+            if d=="encode":
+                end_code+= alphabet[x+s]        
+            elif d=="decode":
+                end_code+=alphabet[x-s]       
+    print(f" here is your {d}d code: {end_code}")
+print(" welcome to ceaser cipher :)")
+while not end:
+    direction=input("type 'encode' to encypt,type 'decode' to decrypt: \n").lower()
+    text= input("type your message: \n").lower()
+    shift= int(input("type your shift number: \n"))    
+    ceaser(text, shift, direction)        
+    end_game=input(" type 'yes' if you want to go again. otherwise, type 'no' "'\n').lower()
+    if end_game=="no":
+        print("Goodbye")
+        end=True
